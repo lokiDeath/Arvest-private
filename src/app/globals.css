@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ====================================================================
+   ARVEST PRIVATE BANKING — THEME
+   Palette inspired by Arvest Bank's signature crimson red + cream,
+   elevated with gold/bronze accents for the "Private Banking" tier.
+==================================================================== */
+:root {
+  --radius: 0.5rem;
+
+  /* Surfaces */
+  --background: oklch(0.985 0.005 60);          /* warm cream */
+  --foreground: oklch(0.18 0.02 20);            /* near-black warm */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 20);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 20);
+
+  /* Brand — Arvest crimson */
+  --primary: oklch(0.36 0.18 25);               /* deep crimson */
+  --primary-foreground: oklch(0.985 0.005 60);
+
+  /* Secondary — muted warm gray */
+  --secondary: oklch(0.94 0.01 60);
+  --secondary-foreground: oklch(0.25 0.02 25);
+
+  /* Muted */
+  --muted: oklch(0.94 0.01 60);
+  --muted-foreground: oklch(0.45 0.02 25);
+
+  /* Accent — gold for private banking */
+  --accent: oklch(0.78 0.13 75);                /* warm gold */
+  --accent-foreground: oklch(0.22 0.04 50);
+
+  /* Destructive */
+  --destructive: oklch(0.52 0.22 25);
+
+  /* Borders & inputs */
+  --border: oklch(0.88 0.01 50);
+  --input: oklch(0.9 0.01 50);
+  --ring: oklch(0.36 0.18 25);
+
+  /* Charts */
+  --chart-1: oklch(0.36 0.18 25);   /* crimson */
+  --chart-2: oklch(0.78 0.13 75);   /* gold */
+  --chart-3: oklch(0.5 0.08 220);   /* slate blue */
+  --chart-4: oklch(0.45 0.12 145);  /* forest */
+  --chart-5: oklch(0.65 0.18 35);   /* terracotta */
+
+  /* Sidebar — dark crimson panel for premium feel */
+  --sidebar: oklch(0.22 0.04 25);               /* deep warm espresso */
+  --sidebar-foreground: oklch(0.95 0.01 60);
+  --sidebar-primary: oklch(0.78 0.13 75);       /* gold accent */
+  --sidebar-primary-foreground: oklch(0.18 0.04 30);
+  --sidebar-accent: oklch(0.28 0.05 25);
+  --sidebar-accent-foreground: oklch(0.95 0.01 60);
+  --sidebar-border: oklch(0.35 0.04 25);
+  --sidebar-ring: oklch(0.78 0.13 75);
+}
+
+.dark {
+  /* Obsidian (#121214 approx) background with muted crimson + subtle gold accent */
+  --background: oklch(0.16 0.012 270);          /* near-black obsidian */
+  --foreground: oklch(0.94 0.01 60);
+  --card: oklch(0.20 0.014 270);
+  --card-foreground: oklch(0.94 0.01 60);
+  --popover: oklch(0.20 0.014 270);
+  --popover-foreground: oklch(0.94 0.01 60);
+
+  --primary: oklch(0.52 0.13 25);              /* muted crimson */
+  --primary-foreground: oklch(0.96 0.005 60);
+
+  --secondary: oklch(0.26 0.012 270);
+  --secondary-foreground: oklch(0.92 0.01 60);
+
+  --muted: oklch(0.26 0.012 270);
+  --muted-foreground: oklch(0.66 0.015 60);
+
+  --accent: oklch(0.68 0.10 75);               /* subtle gold accent */
+  --accent-foreground: oklch(0.16 0.012 270);
+
+  --destructive: oklch(0.6 0.18 25);
+
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.52 0.13 25);
+
+  --chart-1: oklch(0.52 0.13 25);
+  --chart-2: oklch(0.68 0.10 75);
+  --chart-3: oklch(0.55 0.09 220);
+  --chart-4: oklch(0.55 0.11 145);
+  --chart-5: oklch(0.62 0.14 35);
+
+  --sidebar: oklch(0.13 0.012 270);            /* deeper obsidian for sidebar */
+  --sidebar-foreground: oklch(0.94 0.01 60);
+  --sidebar-primary: oklch(0.68 0.10 75);
+  --sidebar-primary-foreground: oklch(0.16 0.012 270);
+  --sidebar-accent: oklch(0.22 0.014 270);
+  --sidebar-accent-foreground: oklch(0.94 0.01 60);
+  --sidebar-border: oklch(1 0 0 / 6%);
+  --sidebar-ring: oklch(0.68 0.10 75);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+  }
+}
+
+/* ===== Arvest brand utilities ===== */
+.arvest-gradient {
+  background: linear-gradient(135deg, oklch(0.36 0.18 25) 0%, oklch(0.28 0.12 20) 100%);
+}
+.arvest-text-gradient {
+  background: linear-gradient(135deg, oklch(0.36 0.18 25) 0%, oklch(0.55 0.15 35) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gold-divider {
+  background: linear-gradient(90deg, transparent, oklch(0.78 0.13 75 / 0.6), transparent);
+  height: 1px;
+}
+
+/* Premium serif font for branding / hero numerals */
+.font-serif-display {
+  font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Professional sans-serif monetary values — Inter, regular weight (not bold) */
+.font-mono-balance {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* Custom scrollbar */
+.arvest-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.arvest-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.arvest-scroll::-webkit-scrollbar-thumb {
+  background: oklch(0.7 0.04 30 / 0.4);
+  border-radius: 4px;
+}
+.arvest-scroll::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6 0.06 25 / 0.6);
+}
+
+/* Glassy card for premium dashboard panels */
+.glass-card {
+  background: oklch(1 0 0 / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(0.88 0.01 50 / 0.8);
+}
+.dark .glass-card {
+  background: oklch(0.21 0.03 25 / 0.7);
+  border: 1px solid oklch(1 0 0 / 0.08);
+}
+
+/* Subtle shimmer for loading skeletons */
+@keyframes arvest-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.arvest-shimmer {
+  background: linear-gradient(90deg, oklch(0.94 0.01 60) 25%, oklch(0.88 0.01 50) 50%, oklch(0.94 0.01 60) 75%);
+  background-size: 200% 100%;
+  animation: arvest-shimmer 1.6s infinite;
+}
+
+/* Print styles for statements */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+}
+
+/* Mobile touch — disable double-tap zoom, allow tap delay optimization */
+html {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  touch-action: manipulation;
+}
